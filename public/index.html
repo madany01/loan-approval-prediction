@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>loan Approval Prediction</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/queries.css" />
+    <script src="./bundle.js" defer></script>
+    <noscript>this site requires javascript to work</noscript>
+  </head>
+
+  <body>
+    <header>
+      <span class="material-symbols-outlined icon"> real_estate_agent </span>
+      <span>loan Approval Prediction</span>
+    </header>
+
+    <main>
+      <form>
+        <div class="input-lbl-group">
+          <div class="legend">gender</div>
+
+          <div class="input-group">
+            <input type="radio" id="genderMale" name="Gender" value="Male" required />
+            <label class="radio-lbl" for="genderMale">male</label>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="genderFemale" name="Gender" value="Female" required />
+            <label class="radio-lbl" for="genderFemale">female</label>
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <div class="legend">married</div>
+
+          <div class="input-group">
+            <input type="radio" id="marriedYes" name="Married" value="Yes" required />
+            <label class="radio-lbl" for="marriedYes">yes</label>
+          </div>
+
+          <div class="input-group">
+            <input type="radio" id="marriedNo" name="Married" value="No" required />
+            <label class="radio-lbl" for="marriedNo">no</label>
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <div class="legend">dependents</div>
+
+          <div class="input-group">
+            <input type="radio" id="dependents0" name="Dependents" value="0" required />
+            <label class="radio-lbl" for="dependents0">0</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" id="dependents1" name="Dependents" value="1" required />
+            <label class="radio-lbl" for="dependents1">1</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" id="dependents2" name="Dependents" value="2" required />
+            <label class="radio-lbl" for="dependents2">2</label>
+          </div>
+          <div class="input-group">
+            <input type="radio" id="dependents3" name="Dependents" value="3+" required />
+            <label class="radio-lbl" for="dependents3">3+</label>
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <div class="legend">credit history</div>
+
+          <div class="input-group">
+            <input
+              type="radio"
+              id="creditHisory0"
+              name="Credit_History"
+              value="0"
+              required
+            />
+            <label class="radio-lbl" for="creditHisory0">no</label>
+          </div>
+
+          <div class="input-group">
+            <input
+              type="radio"
+              id="creditHisory1"
+              name="Credit_History"
+              value="1"
+              required
+            />
+            <label class="radio-lbl" for="creditHisory1">yes</label>
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <div class="legend">education</div>
+
+          <div class="input-group">
+            <label class="radio-lbl" for="educationNotGraduated">not graduated</label>
+            <input
+              type="radio"
+              id="educationNotGraduated"
+              name="Education"
+              value="Not Graduate"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label class="radio-lbl" for="educationGraduated">graduated</label>
+            <input
+              type="radio"
+              id="educationGraduated"
+              name="Education"
+              value="Graduate"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <div class="legend">self employed</div>
+
+          <div class="input-group">
+            <label class="radio-lbl" for="selfEmployedNo">no</label>
+            <input
+              type="radio"
+              id="selfEmployedNo"
+              name="Self_Employed"
+              value="No"
+              required
+            />
+          </div>
+
+          <div class="input-group">
+            <label class="radio-lbl" for="selfEmployedYes">yes</label>
+            <input
+              type="radio"
+              id="selfEmployedYes"
+              name="Self_Employed"
+              value="Yes"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="input-lbl-group">
+          <label for="applicantIncome">applicant income</label>
+          <input
+            type="number"
+            name="ApplicantIncome"
+            id="applicantIncome"
+            required
+            min="1"
+          />
+        </div>
+
+        <div class="input-lbl-group">
+          <label for="coapplicantIncome">co-applicant income</label>
+          <input
+            type="number"
+            name="CoapplicantIncome"
+            id="coapplicantIncome"
+            required
+            min="0"
+          />
+        </div>
+
+        <div class="input-lbl-group">
+          <label for="loanAmount">loan amount</label>
+          <input type="number" name="LoanAmount" id="loanAmount" required min="1" />
+        </div>
+
+        <div class="input-lbl-group">
+          <label for="loanAmountTerm">loan amount term</label>
+          <input
+            type="number"
+            name="Loan_Amount_Term"
+            id="loanAmountTerm"
+            required
+            min="1"
+          />
+        </div>
+
+        <button type="submit" class="btn-predict">Predict</button>
+
+        <div class="spinner-modal-ctr d-none">
+          <div class="spinner-ctr">
+            <div class="lbl">predicting ...</div>
+            <div class="spinner"></div>
+            <button type="button" class="cancel">cancel</button>
+          </div>
+        </div>
+      </form>
+
+      <div class="err-msg-modal hidden">
+        <div class="msg-icon-ctr">
+          <div class="icon"><span class="material-symbols-outlined">error</span></div>
+          <div
+            class="msg"
+            data-msg="Connection Failure: Check your connection and try again"
+          >
+            Connection Failure: Check your connection and try again
+          </div>
+        </div>
+        <button class="close-modal">Cancel</button>
+      </div>
+
+      <div class="predictions-ctr hidden">
+        <div class="model-prediction-ctr bayes">
+          <div class="model-name">naive bayes</div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+
+        <div class="model-prediction-ctr tree">
+          <div class="model-name">decision tree</div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+
+        <div class="model-prediction-ctr logistic">
+          <div class="model-name">logistic regression</div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+
+        <div class="model-prediction-ctr svm">
+          <div class="model-name">SVM</div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+
+        <div class="model-prediction-ctr knn">
+          <div class="model-name">KNN</div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="model-prediction-ctr majority">
+          <div class="model-name">
+            <span class="material-symbols-outlined">how_to_vote</span>
+            <span>Majority</span>
+          </div>
+          <div class="model-verdict">
+            <span class="material-symbols-outlined verdict-icon yes">check</span>
+            <span class="material-symbols-outlined verdict-icon no">close</span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

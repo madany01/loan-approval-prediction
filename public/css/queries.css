@@ -1,0 +1,18 @@
+@media (max-width: calc(842 / 16 * 1rem)) {
+  form {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: calc(440 / 16 * 1rem)) {
+  form {
+    grid-area: 5.8rem;
+  }
+
+  .input-lbl-group {
+    flex-direction: column;
+  }
+
+  .err-msg-modal .msg {
+    font-size: 1.6rem;
+  }
+}
